@@ -1,4 +1,12 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
 import { afterEach, describe, expect, it, vi } from "vitest";
+
+vi.mock("next/server", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("next/server")>()),
+  connection: async () => {},
+}));
 
 import { GET as ctaRedirect } from "@/app/go/contact/route";
 import { PRIVACY_EN, PRIVACY_JA, type Block } from "@/i18n/privacy";
@@ -55,11 +63,16 @@ describe("live-mode privacy notice (v0.3, shown only once live mode is on) match
 });
 
 describe("Work with SolanaLink (DM-06)", () => {
+  it("runs at request time: a prerendered redirect would count no clicks at all", () => {
+    const source = readFileSync(join(__dirname, "..", "src", "app", "go", "contact", "route.ts"), "utf8");
+    expect(source).toMatch(/await connection\(\);\s*logEvent\("cta_clicked"\)/);
+  });
+
   afterEach(() => vi.restoreAllMocks());
 
-  it("redirects to the contact form with the UTM tags and logs only the event name", () => {
+  it("redirects to the contact form with the UTM tags and logs only the event name", async () => {
     const log = vi.spyOn(console, "log").mockImplementation(() => {});
-    const res = ctaRedirect();
+    const res = await ctaRedirect();
     expect(res.status).toBe(302);
     expect(res.headers.get("Location")).toBe(CONTACT_URL);
     expect(new URL(CONTACT_URL).searchParams.get("utm_source")).toBe("kumihimo");
