@@ -1,8 +1,8 @@
 # Kumihimo
 
-An AI creative canvas: connect prompts, language models, image and video models into a workflow, then run it as a graph. Built with Next.js, React Flow and the Atlas Cloud API.
+An AI creative canvas: connect prompts, language models, image and video models into a workflow, then run it as a graph. Built with Next.js and React Flow, designed for the Atlas Cloud API.
 
-> **Unofficial demo. Not affiliated with or endorsed by Atlas Cloud.** It calls Atlas Cloud's public API.
+> **Unofficial demo. Not affiliated with or endorsed by Atlas Cloud.** Live mode is built on Atlas Cloud's public API and is switched off in this demo.
 
 - **Runs on demo data:** every result is a pre-made original sample; no AI model is called, and prompts and images never leave the browser. Live mode (the real Atlas Cloud API through the server) is implemented and tested, and switched off.
 - **Author:** Tony · © 2026 SolanaLink Co., Ltd. · MIT licence
@@ -123,7 +123,7 @@ pnpm dev        # http://127.0.0.1:3070
 
 Without `ATLASCLOUD_API_KEY` the app starts in demo mode: everything works with sample results and nothing is sent to Atlas Cloud. For live mode, copy `.env.example` to `.env.local` and fill it in (never commit it).
 
-To show it on a laptop the way it is presented in interviews, run the production build in demo mode on `http://127.0.0.1:3080` (live mode forced off; no network needed once the page is loaded):
+For an offline presentation on a laptop, run the production build in demo mode on `http://127.0.0.1:3080` (live mode forced off; no network needed once the page is loaded):
 
 ```bash
 scripts/demo-local.sh

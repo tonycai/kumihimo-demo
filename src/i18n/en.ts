@@ -182,7 +182,7 @@ export const en = {
   "notice.data":
     "In live mode, prompts and images are sent to ATLAS CLOUD AI INC. (USA) for processing. This site does not store your prompts or images. Please do not upload photos of other people.",
   "footer.unofficial": "Unofficial demo. Not affiliated with or endorsed by Atlas Cloud.",
-  "footer.usesApi": "Uses the Atlas Cloud API.",
+  "footer.usesApi": "Designed for the Atlas Cloud API.",
   "footer.madeBy": "Built by SolanaLink Co., Ltd.",
   "footer.company": "Company",
   "footer.contact": "Contact",

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Interview demo on this Mac: the production build, demo mode only, on http://127.0.0.1:3080.
+# Offline presentation on this Mac: the production build, demo mode only, on http://127.0.0.1:3080.
 # Live mode is forced off and no key is passed, whatever .env.local holds: nothing calls a paid API,
 # and the page needs no network once loaded. Stop it with Ctrl-C.
 #   usage: scripts/demo-local.sh [--no-build]
