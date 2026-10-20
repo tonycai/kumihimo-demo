@@ -1,0 +1,21 @@
+# Image rules: env and key files never enter the build context. Every rule has a **/ form.
+.git
+**/node_modules
+**/.next
+coverage
+playwright-report
+test-results
+.claude
+.env*
+**/.env*
+*.sw?
+**/*.sw?
+*.pem
+**/*.pem
+*.p8
+**/*.p8
+*.p12
+**/*.p12
+*.key
+**/*.key
+**/.data

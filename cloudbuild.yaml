@@ -1,0 +1,17 @@
+# Build → image check → push. The image is pushed only if every step succeeds, so an image
+# with env or key files never reaches Artifact Registry. Deploying is a separate, manual step
+# (scripts/deploy.sh, red light). No dollar sign other than the substitution appears here (rule 4).
+steps:
+  - id: build
+    name: gcr.io/cloud-builders/docker
+    args: ["build", "-t", "${_IMAGE}", "."]
+  - id: image-check
+    name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    # Same script as local checks and the self-test; it requires the "image check: clean" marker.
+    args: ["scripts/run-image-check.sh", "${_IMAGE}", "/workspace/image-check.log"]
+images: ["${_IMAGE}"]
+options:
+  logging: CLOUD_LOGGING_ONLY
+substitutions:
+  _IMAGE: ""

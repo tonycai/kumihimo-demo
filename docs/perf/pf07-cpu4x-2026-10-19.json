@@ -1,0 +1,70 @@
+{
+  "measuredAt": "2026-10-19T05:35:11.398Z",
+  "commit": "6c58859",
+  "dirty": false,
+  "build": "next build (standalone), served locally",
+  "browser": "Google Chrome 155.0.8059.80 (headed, Playwright)",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "cpuThrottlingRate": 4,
+  "idleFps": 119,
+  "machine": {
+    "model": "Mac16,5",
+    "cpu": "Apple M4 Max",
+    "cores": 16,
+    "memoryGb": 64,
+    "os": "27.0.1"
+  },
+  "graph": {
+    "nodes": 500,
+    "edges": 600,
+    "fitZoom": 0.208
+  },
+  "pf05": {
+    "loadMs": 981,
+    "longTasksOver50ms": [
+      57,
+      52,
+      56,
+      62,
+      63,
+      68,
+      77,
+      80
+    ]
+  },
+  "pf07": {
+    "pan": {
+      "fps": 81.9,
+      "p95FrameMs": 25.5,
+      "worstFrameMs": 83.2,
+      "longTasks": [
+        51,
+        57
+      ]
+    },
+    "zoom": {
+      "fps": 95.9,
+      "p95FrameMs": 17.6,
+      "worstFrameMs": 74.3,
+      "longTasks": [
+        69,
+        56,
+        50,
+        52,
+        56,
+        53,
+        72
+      ]
+    },
+    "drag": {
+      "fps": 77.5,
+      "p95FrameMs": 25.8,
+      "worstFrameMs": 41.7,
+      "longTasks": []
+    }
+  }
+}

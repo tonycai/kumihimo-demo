@@ -1,0 +1,8 @@
+# Default gitleaks rules, minus generated output that is never committed.
+# .next/ holds per-build random keys Next.js generates (preview mode, Server Action encryption).
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Generated build output and installed dependencies (gitignored, never committed)"
+paths = ['''(^|/)\.next/''', '''(^|/)node_modules/''']

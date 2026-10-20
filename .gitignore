@@ -1,0 +1,47 @@
+# deps
+node_modules/
+.pnpm-store/
+
+# next
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# env and secrets: never commit; keep only the template
+.env*
+!.env.example
+*.pem
+*.p8
+*.p12
+*.key
+
+# claude code local settings (machine-specific, contains vault perms)
+.claude/settings.local.json
+
+# tests
+coverage/
+playwright-report/
+test-results/
+blob-report/
+
+# misc
+.DS_Store
+*.sw?
+*.log
+.vercel
+
+# from create-next-app
+/build
+/.pnp
+.pnp.*
+.yarn/*
+
+# local-only usage ledger for live mode on next dev (docs/architecture.md §4)
+.data/
+
+# Playwright output (may contain traces)
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
